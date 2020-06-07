@@ -1,0 +1,27 @@
+@import "app/media.scss";
+
+.container {
+    position: relative;
+	max-width: calc(100vw - 30px);
+	@include media("mobile")
+	{
+		max-width: 650px;
+	}
+	@include media("tablet")
+	{
+		max-width: 860px;
+
+	}
+	@include media("desktop")
+	{
+		max-width: 1000px;
+
+	}
+	@include media("large")
+	{
+		max-width: 1200px;
+
+	}
+	padding: 0px 15px;
+	margin: 0 auto;
+}

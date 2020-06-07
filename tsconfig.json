@@ -1,0 +1,63 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "ESNext",
+		"lib": [
+			"DOM",
+			"ES2015",
+			"ES2016"
+		],
+		"allowJs": false,
+		"jsx": "react",
+		"declaration": true,
+		"outDir": "./build",
+		"rootDir": ".",
+		"removeComments": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"moduleResolution": "node",
+		"baseUrl": ".",
+		"paths": {
+			"app/*": [
+				"./app/*"
+			],
+			"components": [
+				"./components"
+			],
+			"components/*": [
+				"./components/*"
+			],
+			"assets": [
+				"./assets"
+			],
+			"assets/*": [
+				"./assets/*"
+			],
+			"sections": [
+				"./sections"
+			],
+			"hooks": [
+				"./hooks"
+			],
+			"utils": [
+				"./utils"
+			],
+			"utils/*": [
+				"./utils/*"
+			]
+		},
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"inlineSourceMap": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
