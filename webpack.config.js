@@ -1,24 +1,38 @@
-const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
+const { networkInterfaces } = require('os');
 
 const path = require("path");
 
 const rootPath = path.join(__dirname, ".");
 const resolve = (...parts) => path.resolve(rootPath, ...parts);
 
-const aliases = (() => {
+const aliases = (() =>
+{
 	const aliasPaths = require("./tsconfig.json").compilerOptions.paths;
 
 	let a = {};
-	for (let alias in aliasPaths) {
+	for (let alias in aliasPaths)
+	{
 		let p = aliasPaths[alias][0];
 		if (p)
 			a[alias.replace("/*", "")] = "./" + p.replace("/*", "");
 	}
 	return a;
 })();
+
+const getHost = () =>
+{
+	const nets = networkInterfaces();
+	for (const o of nets["Wi-Fi"])
+	{
+		if (o.family === "IPv4")
+			return o.address;
+	}
+	return "127.0.0.1";
+}
+
 
 const config = {
 	mode: "development",
@@ -139,8 +153,7 @@ const config = {
 	devServer: {
 		contentBase: resolve('static'),
 		publicPath: '/',
-		host: '192.168.2.12',
-		port: 3001,
+		host: getHost(),
 		disableHostCheck: true,
 	}
 };
