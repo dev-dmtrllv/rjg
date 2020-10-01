@@ -1,10 +1,6 @@
 import React from "react";
 import { Section, Carousel, CarouselItem, Container, SectionLink } from "components";
 
-import Car1 from "assets/car1.jpg";
-import Car2 from "assets/car2.jpg";
-import Car3 from "assets/car3.jpg";
-
 import "./styles/home.scss";
 
 export const Home: React.FC<HomeProps> = ({ slides }) => 
