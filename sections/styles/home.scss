@@ -16,14 +16,16 @@
 				padding: 15px 35px;
 				color: $grey;
 				position: absolute;
+				left: 50%;
 				top: 50%;
-				transform: translateY(-50%);
+				transform: translate(-50%, -50%);
 				max-width: 50%;
 				@include media("mobile", "tablet") {
-					min-width: 60%;
+					min-width: 65%;
 					max-width: 80%;
-					left: 50%;
-					transform: translate(-50%, -50%);
+					& > .text {
+						padding: 15px 25px !important;
+					}
 				}
 
 				.text {
@@ -51,6 +53,9 @@
 					transform: translate(0px, 100%);
 					transition: 350ms 0ms;
 					margin-left: 30px;
+					@include media("mobile") {
+						margin-left: unset;
+					}
 
 					a {
 						color: white;
@@ -72,7 +77,8 @@
 
 	&.active .item.active {
 		.container {
-			.text, .text .content,
+			.text,
+			.text .content,
 			.buttons {
 				opacity: 1;
 				transform: translate(0%, 0%);
