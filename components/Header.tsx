@@ -13,6 +13,7 @@ import "./styles/header.scss";
 
 const MAX_HEADER_WIDTH = 870;
 const HEADER_HEIGHT = 120;
+const SLIDER_TIMEOUT = 650;
 
 const isHidden = () => window.innerWidth < MAX_HEADER_WIDTH;
 
@@ -35,6 +36,7 @@ export const Header: React.FC = () =>
 	});
 
 	const [isSidebarOpen, setSidebarState] = React.useState(false);
+	const [isSidebarSliding, setIsSidebarSliding] = React.useState(false);
 
 	const update = () => 
 	{
@@ -47,7 +49,12 @@ export const Header: React.FC = () =>
 		});
 	};
 
-	const toggleSidebar = () => setSidebarState(!isSidebarOpen);
+	const toggleSidebar = () => 
+	{
+		setSidebarState(!isSidebarOpen);
+		setIsSidebarSliding(true);
+		setTimeout(() => { setIsSidebarSliding(false); }, SLIDER_TIMEOUT); 
+	};
 
 	useEvent(["resize", update], ["scroll", update]);
 
@@ -87,7 +94,7 @@ export const Header: React.FC = () =>
 					</div>
 				</Container>
 			</nav>
-			<div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+			<div className={`sidebar ${isSidebarOpen ? "open" : ""} ${isSidebarSliding ? "sliding" : ""}`}>
 				<SectionLink to="home" onClick={() => hidden ? scrollToTop() : scrollTo(HEADER_HEIGHT)}>Home</SectionLink>
 				<SectionLink to="about">About</SectionLink>
 				<SectionLink to="contact">Contact</SectionLink>
