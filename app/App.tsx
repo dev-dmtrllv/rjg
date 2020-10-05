@@ -6,7 +6,8 @@ import { AppContextProvider } from "./AppContext";
 import { appData } from "./AppData";
 
 const {
-	home
+	home,
+	about
 } = appData;
 
 export default () => (
@@ -14,7 +15,7 @@ export default () => (
 		<SectionProvider>
 			<Header />
 			<Home slides={home.slides}/>
-			<About />
+			<About {...about}/>
 			<Contact />
 		</SectionProvider>
 	</AppContextProvider>

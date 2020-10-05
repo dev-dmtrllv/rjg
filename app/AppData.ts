@@ -1,8 +1,8 @@
-import { HomeSlideInfo } from "sections"
+import { HomeSlideInfo, AboutInfo } from "sections";
 
-import Car1 from "assets/car1.jpg";
-import Car2 from "assets/car2.jpg";
-import Car3 from "assets/car3.jpg";
+import Car1Image from "assets/car1.jpg";
+import Car2Image from "assets/car2.jpg";
+import Car3Image from "assets/car3.jpg";
 
 export const appData: AppData = {
 	contactInfo: {
@@ -15,7 +15,7 @@ export const appData: AppData = {
 	home: {
 		slides: [
 			{
-				image: Car1,
+				image: Car1Image,
 				text: "Wil je met de auto veilig, zelfverzekerd en goed voorbereid de weg op?",
 				buttons: [
 					{
@@ -30,7 +30,7 @@ export const appData: AppData = {
 				]
 			},
 			{
-				image: Car2,
+				image: Car2Image,
 				text: "Zie onze prijzen en bla bla bla",
 				buttons: [
 					{
@@ -39,12 +39,13 @@ export const appData: AppData = {
 					},
 					{
 						text: "Contact",
-						to: "contact"
+						to: "contact",
+						light: true
 					}
 				]
 			},
 			{
-				image: Car3,
+				image: Car3Image,
 				text: "Wil je rijden fakka?",
 				buttons: [
 					{
@@ -53,11 +54,47 @@ export const appData: AppData = {
 					},
 					{
 						text: "Contact",
-						to: "contact"
+						to: "contact",
+						light: true
 					}
 				]
 			}
 		]
+	},
+	about: {
+		title: {
+			position: "left",
+			title: "Why Choose Us",
+			subTitle: "Who We Are"
+		},
+		text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per idunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.",
+		bullets: [
+			"Safety Driving",
+			"Following Rules & Regulations",
+			"Standard Vehicles",
+			"Traffic Rules",
+			"Special Classes",
+			"Experience Instructors"
+		],
+		buttons: [
+			{
+				text: "Our Features",
+				to: "features"
+			},
+			{
+				text: "Contact",
+				to: "contact"
+			},
+			{
+				text: "Our Pricing",
+				to: "pricing"
+			},
+			{
+				text: "Testimonials",
+				to: "testimonials"
+			}
+		],
+		image: Car2Image
 	}
 }
 
@@ -69,5 +106,8 @@ type AppData = {
 		phone: string;
 		email: string;
 	}
-	home: { slides: HomeSlideInfo[] };
+	home: {
+		slides: HomeSlideInfo[]
+	};
+	about: AboutInfo;
 }
