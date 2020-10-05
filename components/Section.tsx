@@ -76,7 +76,7 @@ export const Section: React.FC<SectionProps> = ({ id, className, children }) =>
 	);
 };
 
-export const SectionLink: React.FC<SectionLinkProps> = ({ className, to, onClick, children }) =>
+export const SectionLink: React.FC<SectionLinkProps> = ({ className, to, onClick, style, children }) =>
 {
 	const { activeId, scrollTo } = React.useContext(SectionContext);
 
@@ -96,7 +96,7 @@ export const SectionLink: React.FC<SectionLinkProps> = ({ className, to, onClick
 	});
 
 	return (
-		<a href={`#${to}`} className={cn} onClick={handleClick}>
+		<a href={`#${to}`} className={cn} style={style} onClick={handleClick}>
 			{children}
 		</a>
 	);
@@ -125,4 +125,5 @@ type SectionLinkProps = {
 	className?: string;
 	to: string;
 	onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => any;
+	style?: React.CSSProperties;
 };
