@@ -5,6 +5,9 @@
 	position: relative;
 	min-height: 460px;
 	height: calc(100vh - 120px);
+	@include media("mobile", "tablet") {
+		height: calc(100vh - 64px);
+	}
 	width: 100%;
 
 	.item {
