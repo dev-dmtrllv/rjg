@@ -1,13 +1,14 @@
 import React from "react";
 
-import { Home, About, Contact } from "sections";
+import { Home, About, Contact, Features, Portfolio, Pricings, Testimonials } from "sections";
 import { SectionProvider, Header } from "components";
 import { AppContextProvider } from "./AppContext";
 import { appData } from "./AppData";
 
 const {
 	home,
-	about
+	about,
+	contact
 } = appData;
 
 export default () => (
@@ -16,7 +17,11 @@ export default () => (
 			<Header />
 			<Home slides={home.slides}/>
 			<About {...about}/>
-			<Contact />
+			<Contact {...contact}/>
+			<Features />
+			<Portfolio />
+			<Pricings />
+			<Testimonials />
 		</SectionProvider>
 	</AppContextProvider>
 );

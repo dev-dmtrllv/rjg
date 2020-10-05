@@ -1,4 +1,4 @@
-import { HomeSlideInfo, AboutInfo } from "sections";
+import { HomeProps, AboutProps, ContactProps } from "sections";
 
 import Car1Image from "assets/car1.jpg";
 import Car2Image from "assets/car2.jpg";
@@ -94,7 +94,10 @@ export const appData: AppData = {
 				to: "testimonials"
 			}
 		],
-		image: Car2Image
+		image: Car2Image,
+	},
+	contact: {
+		image: Car3Image,
 	}
 }
 
@@ -106,8 +109,7 @@ type AppData = {
 		phone: string;
 		email: string;
 	}
-	home: {
-		slides: HomeSlideInfo[]
-	};
-	about: AboutInfo;
+	home: HomeProps;
+	about: AboutProps;
+	contact: ContactProps;
 }

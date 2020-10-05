@@ -11,7 +11,7 @@ const colors = [
 	"rgb(64, 153, 149)",
 ];
 
-export const About: React.FC<AboutInfo> = ({ title, bullets, buttons, image, text }) =>
+export const About: React.FC<AboutProps> = ({ title, bullets, buttons, image, text }) =>
 {
 	return (
 		<Section id="about">
@@ -63,7 +63,7 @@ type AboutButton = {
 	to: string;
 };
 
-export type AboutInfo = {
+export type AboutProps = {
 	title: SectionTitleProps;
 	text: string;
 	bullets: string[];

@@ -1,0 +1,20 @@
+@import "app/vars.scss";
+@import "app/media.scss";
+
+#contact {
+	.content {
+		display: flex;
+		flex-direction: row;
+	}
+	.image {
+		flex: 1;
+	}
+	
+	.info {
+		flex: 1;
+	}
+	
+	.contact-form {
+		flex: 1;
+	}
+}
