@@ -31,22 +31,17 @@ export const appData: AppData = {
 			},
 			{
 				image: Car2Image,
-				text: "Zie onze prijzen en bla bla bla",
+				text: "Kies het voor jou geschikte pakket! Er is keuze uit verschillende mogelijkheden.",
 				buttons: [
 					{
 						text: "Lees Meer",
-						to: "about"
+						to: "pricings"
 					},
-					{
-						text: "Contact",
-						to: "contact",
-						light: true
-					}
 				]
 			},
 			{
 				image: Car3Image,
-				text: "Wil je rijden fakka?",
+				text: "Nog meer tekst Lorem Ipsum etc...",
 				buttons: [
 					{
 						text: "Lees Meer",
@@ -67,14 +62,12 @@ export const appData: AppData = {
 			title: "Why Choose Us",
 			subTitle: "Who We Are"
 		},
-		text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per idunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.",
+		text: "Dan is het nu de tijd om bij mij je rijbewijs te halen. Het rijbewijs draagt tenslotte aan bij het zeer prettige gevoel van vrijheid! Je krijgt les van een vaste, door Innovam gecertificeerde vrouwelijke rij-instructeur, namelijk Judith Groen. Iedere les ga je in dezelfde auto rijden, en in deze auto ga je ook afrijden. Autorijschool J. Groen is een frisse onderneming die van toekomstige bestuurders veelzijdige, zelfverzekerde en vooral veilige weggebruikers maakt.",
 		bullets: [
-			"Safety Driving",
-			"Following Rules & Regulations",
-			"Standard Vehicles",
-			"Traffic Rules",
-			"Special Classes",
-			"Experience Instructors"
+			"Veiligheid",
+			"Kwaliteit",
+			"Betrokkenheid",
+			"Ervaring",
 		],
 		buttons: [
 			{
@@ -97,7 +90,24 @@ export const appData: AppData = {
 		image: Car2Image,
 	},
 	contact: {
-		image: Car3Image,
+		image: "http://mathan.commonsupport.com/wp/rochester/wp-content/uploads/2017/07/fullwith-3.jpg?id=1019",
+		contactInfo: [
+			{
+				icon: "road",
+				title: "Veiligheid",
+				text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio morbi cumsan ipsum velit. Nam nec tellus a odio ti."
+			},
+			{
+				icon: "user-graduate",
+				title: "Afrijden",
+				text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio morbi cumsan ipsum velit. Nam nec tellus a odio ti."
+			},
+			{
+				icon: "exchange-alt",
+				title: "Communicatie",
+				text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio morbi cumsan ipsum velit. Nam nec tellus a odio ti."
+			}
+		]
 	}
 }
 
@@ -112,4 +122,4 @@ type AppData = {
 	home: HomeProps;
 	about: AboutProps;
 	contact: ContactProps;
-}
+};

@@ -12,10 +12,9 @@
 		@include media("tablet", "mobile") {
 			min-height: unset;
 			margin: 65px 0px 0px 0px;
-		
 		}
 		.content {
-			padding: 0px 25px 0px 0px;
+			padding: 0px 45px 0px 0px;
 			flex-basis: 50%;
 			@include media("tablet", "mobile") {
 				flex-basis: auto;
@@ -30,13 +29,17 @@
 					width: 50%;
 					display: inline-block;
 					white-space: nowrap;
-					i, .txt {
+					i,
+					.txt {
 						vertical-align: top;
 						display: inline-block;
 						white-space: initial;
 					}
 					i {
 						padding: 4px 4px 0px 0px;
+					}
+					.txt {
+						max-width: calc(100% - 35px);
 					}
 				}
 			}
@@ -54,7 +57,7 @@
 			}
 		}
 	}
-	
+
 	.button-group {
 		display: none !important;
 		position: absolute;

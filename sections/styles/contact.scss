@@ -5,16 +5,157 @@
 	.content {
 		display: flex;
 		flex-direction: row;
+		position: relative;
 	}
 	.image {
 		flex: 1;
+		position: relative;
+		.image-bg {
+			width: 100%;
+			height: 100%;
+		}
 	}
-	
+
 	.info {
+		// background-color: $green;
+		// color: white;
 		flex: 1;
+		.inner-info {
+			box-sizing: border-box;
+			padding: 80px 30px;
+			padding-right: 0px;
+			.info-point {
+				display: flex;
+				&:not(:last-child) {
+					margin-bottom: 40px;
+				}
+				white-space: nowrap;
+				.icon {
+					padding-right: 60px;
+					vertical-align: top;
+					display: inline-block;
+					min-width: 36px;
+					height: 36px;
+					i {
+						position: absolute;
+						font-size: 32px;
+					}
+				}
+				.content {
+					white-space: initial;
+					display: inline-block;
+					.title {
+						margin-bottom: 15px;
+						text-transform: capitalize;
+						font-weight: bold;
+					}
+				}
+			}
+		}
 	}
-	
+
 	.contact-form {
-		flex: 1;
+		padding: 80px 30px;
+		// flex: 1;
+		width: 50%;
+		background: #f6f4f2;
+		h2 {
+			color: $green !important;
+			margin: 0px 0px 30px 0px;
+		}
+
+		.input-group {
+			position: relative;
+			.placeholder {
+				pointer-events: none;
+				top: 0px;
+				left: 0px;
+				padding: 13px 20px;
+				height: 50px;
+				width: 100%;
+				position: absolute;
+				transition: 150ms;
+				& .colon {
+					opacity: 0;
+					transition: opacity 150ms;
+				}
+				&.hide {
+					padding: 5px 10px;
+					font-size: 10px;
+					& .colon {
+						opacity: 1;
+					}
+				}
+			}
+
+			// Keep the input fields white when the user uses autofill provided by the browser
+			input:-webkit-autofill,
+			input:-webkit-autofill:hover,
+			input:-webkit-autofill:focus,
+			input:-webkit-autofill:active {
+				-webkit-box-shadow: 0 0 0 30px white inset !important;
+			}
+
+			input,
+			textarea {
+				background-color: white !important;
+				outline-color: $light-green;
+				padding: 18px 20px 10px 20px;
+				height: 50px;
+				width: 100%;
+				display: block;
+				margin-bottom: 15px;
+				border-radius: 4px;
+				border: 1px solid $light-grey;
+				resize: none;
+				font-family: OpenSans, sans-serif;
+			}
+			&.with-errors > input,
+			&.with-errors > textarea {
+				border: 1px solid #d42525;
+				outline-color: #d42525;
+			}
+			textarea {
+				resize: none;
+				height: 120px;
+				font-family: OpenSans, sans-serif;
+			}
+			.input-warning {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				padding: 15px;
+				height: 100%;
+				box-sizing: border-box;
+
+				.icon {
+					font-size: 20px;
+					& > i {
+						color: #d42525 !important;
+					}
+				}
+
+				.msg-panel {
+					display: none;
+					position: absolute;
+					right: 0;
+					top: -33px;
+					white-space: nowrap;
+					background-color: #d42525;
+					color: white;
+					border-radius: 6px;
+					font-size: 14px;
+					padding: 10px 10px;
+					right: 47px;
+					top: 6px;
+				}
+
+				& > .wrapper:hover {
+					.msg-panel {
+						display: block;
+					}
+				}
+			}
+		}
 	}
 }

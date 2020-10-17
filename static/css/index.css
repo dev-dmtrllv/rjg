@@ -53,6 +53,18 @@ body {
 	color: #464646;
 }
 
-section {
-	/* min-height: 60vh; */
+h1,
+h2,
+h3 {
+	color: #8cc640 !important;
+}
+
+h4,
+h5,
+h6 {
+	color: #6a921c !important;
+}
+
+i {
+	color: #6a921c !important;
 }

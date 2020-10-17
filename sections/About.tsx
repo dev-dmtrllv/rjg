@@ -27,7 +27,7 @@ export const About: React.FC<AboutProps> = ({ title, bullets, buttons, image, te
 									{
 										return (
 											<div key={i} className="bullet">
-												<i className="far fa-check-circle" />
+												<i className="fas fa-check-circle" />
 												<div className="txt">
 													{txt}
 												</div>

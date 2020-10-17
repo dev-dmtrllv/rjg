@@ -22,7 +22,7 @@
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
-				max-width: 50%;
+				width: 55%;
 				@include media("mobile", "tablet") {
 					min-width: 65%;
 					max-width: 80%;
