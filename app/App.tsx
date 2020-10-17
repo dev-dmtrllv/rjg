@@ -6,6 +6,7 @@ import { AppContextProvider } from "./AppContext";
 import { appData } from "./AppData";
 
 const {
+	header,
 	home,
 	about,
 	contact
@@ -14,14 +15,14 @@ const {
 export default () => (
 	<AppContextProvider>
 		<SectionProvider>
-			<Header />
+			<Header {...header}/>
 			<Home slides={home.slides}/>
 			<About {...about}/>
-			<Contact {...contact}/>
 			<Features />
 			<Portfolio />
 			<Pricings />
 			<Testimonials />
+			<Contact {...contact}/>
 		</SectionProvider>
 	</AppContextProvider>
 );

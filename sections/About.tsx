@@ -1,17 +1,10 @@
 import React from "react";
-import { Section, SectionLink } from "components/Section";
+import { Section } from "components/Section";
 import { Container, SectionTitle, SectionTitleProps } from "components";
 
 import "./styles/about.scss";
 
-const colors = [
-	"rgb(140, 197, 64)",
-	"rgb(187, 215, 34)",
-	"rgb(68, 184, 181)",
-	"rgb(64, 153, 149)",
-];
-
-export const About: React.FC<AboutProps> = ({ title, bullets, buttons, image, text }) =>
+export const About: React.FC<AboutProps> = ({ title, bullets, image, text }) =>
 {
 	return (
 		<Section id="about">
@@ -41,32 +34,15 @@ export const About: React.FC<AboutProps> = ({ title, bullets, buttons, image, te
 							</div>
 						</div>
 					</Container>
-					<div className="button-group">
-						{buttons.map(({ text, to }, i) => 
-						{
-							return (
-								<SectionLink key={i} className="btn" to={to} style={{ backgroundColor: colors[i % 4] }}>
-									{text.substr(0, 4)}
-								</SectionLink>
-							);
-						})}
-					</div>
 				</>
 			)}
 		</Section>
 	);
 };
 
-
-type AboutButton = {
-	text: string;
-	to: string;
-};
-
 export type AboutProps = {
 	title: SectionTitleProps;
 	text: string;
 	bullets: string[];
-	buttons: AboutButton[];
 	image: string;
 };

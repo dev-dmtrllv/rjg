@@ -18,6 +18,7 @@
 			flex-basis: 50%;
 			@include media("tablet", "mobile") {
 				flex-basis: auto;
+				padding: 0px;
 			}
 			p {
 				margin: 20px 0px 0px 0px;

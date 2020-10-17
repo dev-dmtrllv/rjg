@@ -102,7 +102,7 @@ const Input: React.FC<InputProps> = ({ name, errors, onChange, value, placeholde
 }
 //#endregion
 
-export const Contact: React.FC<ContactProps> = ({ image, contactInfo }) => 
+export const Contact: React.FC<ContactProps> = ({ contactInfo, title }) => 
 {
 	const [inputs, setInputs] = React.useState<ContactInputState>(INIT_CONTACT_INPUT_STATE);
 
@@ -148,7 +148,7 @@ export const Contact: React.FC<ContactProps> = ({ image, contactInfo }) =>
 					<Container>
 						<div className="content">
 							<div className="contact-form">
-								<h2>Application Form</h2>
+								<h2>{title}</h2>
 								<form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
 
 									<Input type="text" name="name" placeholder="Your Name" value={inputs.name.value} onChange={changeHandler} errors={inputs.name.errors} />
@@ -214,6 +214,6 @@ type ContactInfo = {
 };
 
 export type ContactProps = {
-	image: string;
+	title: string;
 	contactInfo: ContactInfo[];
 };

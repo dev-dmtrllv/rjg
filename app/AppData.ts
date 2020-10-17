@@ -3,6 +3,7 @@ import { HomeProps, AboutProps, ContactProps } from "sections";
 import Car1Image from "assets/car1.jpg";
 import Car2Image from "assets/car2.jpg";
 import Car3Image from "assets/car3.jpg";
+import { HeaderProps } from "components";
 
 export const appData: AppData = {
 	contactInfo: {
@@ -11,6 +12,26 @@ export const appData: AppData = {
 		email: "123@rijschool-groen.com",
 		post: "1234 AB",
 		phone: "0123-456789"
+	},
+	header: {
+		links: [
+			{
+				text: "Home",
+				to: "home"
+			},
+			{
+				text: "About",
+				to: "about"
+			},
+			{
+				text: "Pricings",
+				to: "pricings"
+			},
+			{
+				text: "Contact",
+				to: "contact"
+			},
+		]
 	},
 	home: {
 		slides: [
@@ -69,28 +90,10 @@ export const appData: AppData = {
 			"Betrokkenheid",
 			"Ervaring",
 		],
-		buttons: [
-			{
-				text: "Our Features",
-				to: "features"
-			},
-			{
-				text: "Contact",
-				to: "contact"
-			},
-			{
-				text: "Our Pricing",
-				to: "pricing"
-			},
-			{
-				text: "Testimonials",
-				to: "testimonials"
-			}
-		],
 		image: Car2Image,
 	},
 	contact: {
-		image: "http://mathan.commonsupport.com/wp/rochester/wp-content/uploads/2017/07/fullwith-3.jpg?id=1019",
+		title: "Contact",
 		contactInfo: [
 			{
 				icon: "road",
@@ -119,6 +122,7 @@ type AppData = {
 		phone: string;
 		email: string;
 	}
+	header: HeaderProps;
 	home: HomeProps;
 	about: AboutProps;
 	contact: ContactProps;

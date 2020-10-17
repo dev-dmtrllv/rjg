@@ -28,7 +28,7 @@ const isFixed = () =>
 
 export const getHeaderOffset = () => isHidden() ? 64 : 0;
 
-export const Header: React.FC = () =>
+export const Header: React.FC<HeaderProps> = ({ links }) =>
 {
 	const [{ hidden, fixed }, setState] = React.useState({
 		hidden: isHidden(),
@@ -41,7 +41,7 @@ export const Header: React.FC = () =>
 	const update = () => 
 	{
 		const h = isHidden();
-		if(!h && isSidebarOpen)
+		if (!h && isSidebarOpen)
 			setSidebarState(false);
 		setState({
 			hidden: h,
@@ -53,7 +53,7 @@ export const Header: React.FC = () =>
 	{
 		setSidebarState(!isSidebarOpen);
 		setIsSidebarSliding(true);
-		setTimeout(() => { setIsSidebarSliding(false); }, SLIDER_TIMEOUT); 
+		setTimeout(() => { setIsSidebarSliding(false); }, SLIDER_TIMEOUT);
 	};
 
 	useEvent(["resize", update], ["scroll", update]);
@@ -88,16 +88,12 @@ export const Header: React.FC = () =>
 				<Container>
 					<Logo />
 					<div className="link-group">
-						<SectionLink to="home" onClick={() => hidden ? scrollToTop() : scrollTo(HEADER_HEIGHT)}>Home</SectionLink>
-						<SectionLink to="about">About</SectionLink>
-						<SectionLink to="contact">Contact</SectionLink>
+						{links.map((link, i) => <SectionLink key={i} to={link.to} onClick={i === 0 ? () => hidden ? scrollToTop() : scrollTo(HEADER_HEIGHT) : undefined}>{link.text}</SectionLink>)}
 					</div>
 				</Container>
 			</nav>
 			<div className={`sidebar ${isSidebarOpen ? "open" : ""} ${isSidebarSliding ? "sliding" : ""}`}>
-				<SectionLink to="home" onClick={() => hidden ? scrollToTop() : scrollTo(HEADER_HEIGHT)}>Home</SectionLink>
-				<SectionLink to="about">About</SectionLink>
-				<SectionLink to="contact">Contact</SectionLink>
+				{links.map((link, i) => <SectionLink key={i} to={link.to} onClick={i === 0 ? () => hidden ? scrollToTop() : scrollTo(HEADER_HEIGHT) : undefined}>{link.text}</SectionLink>)}
 			</div>
 			<div className="nav-spacer" style={{ height: `${hidden ? 64 : 0}px` }} />
 		</>
@@ -122,4 +118,11 @@ const HeaderItem: React.FC<HeaderItemProps> = ({ icon, children }: HeaderItemPro
 type HeaderItemProps = {
 	icon: string;
 	children: string | string[];
+};
+
+export type HeaderProps = {
+	links: {
+		text: string;
+		to: string;
+	}[];
 };
