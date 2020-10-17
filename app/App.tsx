@@ -4,6 +4,7 @@ import { Home, About, Contact, Features, Portfolio, Pricings, Testimonials } fro
 import { SectionProvider, Header } from "components";
 import { AppContextProvider } from "./AppContext";
 import { appData } from "./AppData";
+import { Footer } from "components/Footer";
 
 const {
 	header,
@@ -16,14 +17,15 @@ const {
 export default () => (
 	<AppContextProvider>
 		<SectionProvider>
-			<Header {...header}/>
-			<Home slides={home.slides}/>
-			<About {...about}/>
+			<Header {...header} />
+			<Home slides={home.slides} />
+			<About {...about} />
 			<Features />
 			<Portfolio />
-			<Pricings {...pricings}/>
+			<Pricings {...pricings} />
 			<Testimonials />
-			<Contact {...contact}/>
+			<Contact {...contact} />
+			<Footer />
 		</SectionProvider>
 	</AppContextProvider>
 );

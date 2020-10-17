@@ -10,6 +10,7 @@ import { Logo } from "./Logo";
 import { appData } from "app/AppData";
 
 import "./styles/header.scss";
+import { ContactItems } from "./ContactItems";
 
 const MAX_HEADER_WIDTH = 870;
 const HEADER_HEIGHT = 120;
@@ -61,24 +62,12 @@ export const Header: React.FC<HeaderProps> = ({ links }) =>
 	const headerClass = getClassFromProps("header", { hidden });
 	const navClass = getClassFromProps("nav", { hidden, fixed });
 
-	const { adress, city, email, phone, post } = appData.contactInfo;
-
 	return (
 		<>
 			<div id="header" className={headerClass} style={{ height: `${HEADER_HEIGHT}px` }}>
 				<Container>
 					<Logo />
-					<div className="items">
-						<HeaderItem icon="fas fa-map-marker-alt">
-							{[adress, `${city}, ${post}`]}
-						</HeaderItem>
-						<HeaderItem icon="fas fa-phone-alt">
-							{phone}
-						</HeaderItem>
-						<HeaderItem icon="far fa-envelope">
-							{email}
-						</HeaderItem>
-					</div>
+					<ContactItems />
 				</Container>
 			</div>
 			<nav className={navClass}>
@@ -98,26 +87,6 @@ export const Header: React.FC<HeaderProps> = ({ links }) =>
 			<div className="nav-spacer" style={{ height: `${hidden ? 64 : 0}px` }} />
 		</>
 	);
-};
-
-const HeaderItem: React.FC<HeaderItemProps> = ({ icon, children }: HeaderItemProps) =>
-{
-	const text: string[] = Array.isArray(children) ? children : [children];
-	return (
-		<div className="item">
-			<div className="icon">
-				<i className={icon} />
-			</div>
-			<div className="content">
-				{text.map((t, i) => <div key={i} className="text">{t}</div>)}
-			</div>
-		</div>
-	);
-};
-
-type HeaderItemProps = {
-	icon: string;
-	children: string | string[];
 };
 
 export type HeaderProps = {

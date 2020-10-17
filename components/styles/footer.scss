@@ -1,0 +1,28 @@
+@import "app/vars.scss";
+
+#footer {
+	margin-top: 65px;
+	background-color: $green;
+	position: relative;
+	padding: 35px 0px;
+	color: white;
+	.left {
+		.logo {
+			height: unset;
+			img {
+				position: relative;
+				left: unset;
+				top: unset;
+				transform: unset;
+				padding: 5px 0px 25px 0px;
+			}
+		}
+	}
+	.contact-items {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		& > .item > .icon > i { color: white !important; }
+	}
+}

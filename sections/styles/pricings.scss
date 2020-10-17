@@ -1,6 +1,7 @@
 @import "app/vars.scss";
 
 #pricings {
+	@include section-offset();
 	.pricings-blocks-wrapper {
 		display: grid;
 		@include media("mobile") {
