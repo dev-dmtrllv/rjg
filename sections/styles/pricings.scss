@@ -1,3 +1,92 @@
+@import "app/vars.scss";
+
 #pricings {
-	height: 40vh;
+	.pricings-blocks-wrapper {
+		display: grid;
+		@include media("mobile") {
+			grid-template-columns: auto;
+		}
+		@include media("tablet") {
+			grid-template-columns: auto auto;
+		}
+		grid-template-columns: auto auto auto;
+		.pricings-block {
+			padding: 15px;
+			display: inline-block;
+			&.ref > .block {
+				box-shadow: 0px 0px 4px 0px $green;
+			}
+			.block {
+				transition: box-shadow 150ms;
+				height: 100%;
+				padding: 0px 42px;
+				position: relative;
+				border: 1px solid $light-grey;
+				text-align: center;
+				&:hover {
+					box-shadow: 0px 0px 4px 1px $green;
+				}
+				.name {
+					display: inline-block;
+					width: 100%;
+					background-color: $green;
+					color: white;
+					font-weight: bold;
+					font-size: 20px;
+					padding: 15px 0px;
+					margin-top: -1px;
+				}
+				.price {
+					span {
+						font-size: 24px;
+						padding: 5px;
+					}
+					font-size: 36px;
+					font-weight: bold;
+					padding: 15px 0px;
+				}
+				.sep {
+					width: 100%;
+					margin: 25px 0px;
+					height: 1px;
+					border-bottom: 1px dashed $grey;
+				}
+				.bullets {
+					text-align: left;
+					width: 100%;
+					height: 150px;
+					@include media("mobile") {
+						height: unset;
+					}
+					.bullet {
+						display: flex;
+						flex-direction: row;
+						width: 100%;
+						i {
+							margin-right: 5px;
+							padding: 2px 0px;
+						}
+						margin-bottom: 5px;
+					}
+				}
+				.btn-choose {
+					transition: 150ms;
+					width: 100%;
+					padding: 15px;
+					border: 1px solid $light-grey;
+					margin-bottom: 25px;
+					cursor: pointer;
+					text-transform: uppercase;
+					font-size: 20px;
+					font-weight: bold;
+					color: $green;
+					&:hover,
+					&:active {
+						background-color: $green;
+						color: white;
+					}
+				}
+			}
+		}
+	}
 }

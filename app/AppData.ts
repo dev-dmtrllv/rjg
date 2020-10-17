@@ -97,7 +97,84 @@ export const appData: AppData = {
 			position: "center",
 			subTitle: "Get Special Offer",
 			title: "Our Pricings"
-		}
+		},
+		pricingsBlocks: [
+			{
+				name: "Spoed Cursus",
+				lessons: 25,
+				price: 1195,
+				bullets: [
+					"Praktijkexamen CBR",
+					"Meerdere lessen per week"
+				],
+				warn: "Voor deze cursus moet je je theorie al hebben gehaald!"
+			},
+			{
+				name: "Start & Go 25",
+				lessons: 25,
+				price: 1295,
+				bullets: [
+					{ text: "Theorie Pakket", ref: "Theorie" },
+					{ text: "Tussentijdse toets CBR", ref: "Tussentijdse toets CBR" },
+					{ text: "Praktijkexamen CBR", ref: "Praktijkexamen CBR" },
+				],
+			},
+			{
+				name: "Start & Go 30",
+				lessons: 30,
+				price: 1445,
+				bullets: [
+					{ text: "Theorie Pakket", ref: "Theorie" },
+					{ text: "Tussentijdse toets CBR", ref: "Tussentijdse toets CBR" },
+					{ text: "Praktijkexamen CBR", ref: "Praktijkexamen CBR" },
+				],
+			},
+			{
+				name: "Start & Go 40",
+				lessons: 40,
+				price: 1785,
+				bullets: [
+					
+					{ text: "Theorie Pakket", ref: "Theorie" },
+					{ text: "Tussentijdse toets CBR", ref: "Tussentijdse toets CBR" },
+					{ text: "Praktijkexamen CBR", ref: "Praktijkexamen CBR" },
+				],
+			},
+			{
+				name: "Theorie",
+				price: 39.50,
+				bullets: [
+					"Boek + 10 uur online examen training",
+					"Meerdere lessen per week"
+				],
+			},
+			{
+				name: "Cheap 10",
+				lessons: 10,
+				price: 385,
+				bullets: [
+					"Pakket met 10 losse lessen"
+				],
+			},
+		],
+		exclusivePricings: [
+			{
+				name: "Losse les van 60 minuten",
+				price: 39.50,
+			},
+			{
+				name: "Tussentijdse toets CBR",
+				price: 160,
+			},
+			{
+				name: "Praktijkexamen CBR",
+				price: 195,
+			},
+			{
+				name: "Faalangstexamen",
+				price: 235,
+			}
+		]
 	},
 	contact: {
 		title: "Contact",
