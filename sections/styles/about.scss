@@ -2,10 +2,9 @@
 @import "app/media.scss";
 
 #about {
-	margin-bottom: 65px;
+	@include section-offset();
 	position: relative;
-	.top {
-		margin-top: 86px;
+	.container {
 		display: flex;
 		flex-direction: row;
 		position: relative;

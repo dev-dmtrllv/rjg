@@ -7,9 +7,11 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({ title, subTitle, pos
 {
 	return (
 		<div className={getClassFromProps("section-title", { [position]: true })}>
-			{subTitle && <h5 className="sub">{subTitle}</h5>}
-			<h2 className="title">{title}</h2>
-			<div className="underline" />
+			<div className="wrapper">
+				{subTitle && <h5 className="sub">{subTitle}</h5>}
+				<h2 className="title">{title}</h2>
+				<div className="underline" />
+			</div>
 		</div>
 	);
 };

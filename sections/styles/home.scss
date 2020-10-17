@@ -22,7 +22,8 @@
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
-				width: 55%;
+				// min-width: 55%;
+				max-width: 75%;
 				@include media("mobile", "tablet") {
 					min-width: 65%;
 					max-width: 80%;
@@ -48,6 +49,9 @@
 						font-weight: bold;
 						text-transform: uppercase;
 						color: #bbbbbb;
+						@include media("mobile") {
+							font-size: 24px;
+						} 
 					}
 				}
 

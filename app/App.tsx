@@ -9,6 +9,7 @@ const {
 	header,
 	home,
 	about,
+	pricings,
 	contact
 } = appData;
 
@@ -20,7 +21,7 @@ export default () => (
 			<About {...about}/>
 			<Features />
 			<Portfolio />
-			<Pricings />
+			<Pricings {...pricings}/>
 			<Testimonials />
 			<Contact {...contact}/>
 		</SectionProvider>

@@ -11,27 +11,25 @@ export const About: React.FC<AboutProps> = ({ title, bullets, image, text }) =>
 			{(active) => (
 				<>
 					<Container>
-						<div className="top">
-							<div className="content">
-								<SectionTitle {...title} />
-								<p>{text}</p>
-								<div className="bullets">
-									{bullets.map((txt, i) => 
-									{
-										return (
-											<div key={i} className="bullet">
-												<i className="fas fa-check-circle" />
-												<div className="txt">
-													{txt}
-												</div>
+						<div className="content">
+							<SectionTitle {...title} />
+							<p>{text}</p>
+							<div className="bullets">
+								{bullets.map((txt, i) => 
+								{
+									return (
+										<div key={i} className="bullet">
+											<i className="fas fa-check-circle" />
+											<div className="txt">
+												{txt}
 											</div>
-										);
-									})}
-								</div>
+										</div>
+									);
+								})}
 							</div>
-							<div className="img">
-								<img src={image} />
-							</div>
+						</div>
+						<div className="img">
+							<img src={image} />
 						</div>
 					</Container>
 				</>

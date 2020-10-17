@@ -1,4 +1,4 @@
-import { HomeProps, AboutProps, ContactProps } from "sections";
+import { HomeProps, AboutProps, ContactProps, PricingsProps } from "sections";
 
 import Car1Image from "assets/car1.jpg";
 import Car2Image from "assets/car2.jpg";
@@ -92,6 +92,13 @@ export const appData: AppData = {
 		],
 		image: Car2Image,
 	},
+	pricings: {
+		title: {
+			position: "center",
+			subTitle: "Get Special Offer",
+			title: "Our Pricings"
+		}
+	},
 	contact: {
 		title: "Contact",
 		contactInfo: [
@@ -125,5 +132,6 @@ type AppData = {
 	header: HeaderProps;
 	home: HomeProps;
 	about: AboutProps;
+	pricings: PricingsProps;
 	contact: ContactProps;
 };

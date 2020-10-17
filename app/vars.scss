@@ -1,5 +1,22 @@
+@import "app/media.scss";
+
 $green: #6a921c;
 $light-green: #8cc640;
 $light-grey: #e2e5ea;
 $grey: #939598;
 $dark-grey: #464646;
+
+$section-offset: 86px 0px 86px 0px;
+$section-offset-tablet: 64px 0px 64px 0px;
+$section-offset-mobile: 38px 0px 38px 0px;
+
+@mixin section-offset()
+{
+	@include media("mobile") {
+		margin: $section-offset-mobile;
+	}
+	@include media("tablet") {
+		margin: $section-offset-tablet;
+	}
+	margin: $section-offset;
+}
