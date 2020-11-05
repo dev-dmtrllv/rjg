@@ -20,7 +20,7 @@
 		"strictPropertyInitialization": true,
 		"noImplicitThis": true,
 		"moduleResolution": "node",
-		"baseUrl": ".",
+		"baseUrl": "./src",
 		"paths": {
 			"app/*": [
 				"./app/*"

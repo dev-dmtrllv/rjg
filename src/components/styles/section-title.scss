@@ -1,0 +1,44 @@
+@import "src/app/vars";
+
+.section-title {
+	.wrapper {
+		display: inline-block;
+		.sub {
+			font-style: italic;
+			font-size: 14px;
+			margin: 0px 0px 10px 0px;
+			color: $dark-grey;
+		}
+		.title {
+			font-size: 36px;
+			margin: 0px 0px 20px 0px;
+		}
+		.underline {
+			display: inline-block;
+			margin-bottom: 20px;
+			width: 65%;
+			height: 1px;
+			background-color: $light-grey;
+			position: relative;
+			&::after {
+				content: "";
+				width: 20%;
+				height: 1px;
+				background-color: $light-green;
+				position: absolute;
+			}
+		}
+	}
+	&.center {
+		text-align: center;
+		.wrapper {
+			.underline {
+				&::after {
+					content: "";
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+}

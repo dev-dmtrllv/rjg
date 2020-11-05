@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "webpack-dev-server --colors --watch",
 		"build": "webpack",
-		"serer-build": "server -s ./build"
+		"serve-build": "serve -s ./build"
 	},
 	"keywords": [],
 	"author": "",

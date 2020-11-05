@@ -1,0 +1,21 @@
+@import "src/app/media.scss";
+@import "src/app/vars.scss";
+
+.contact-items {
+	.item {
+		margin-left: 35px;
+		float: left;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.icon,
+		.content {
+			float: left;
+		}
+		.icon {
+			margin-right: 15px;
+			font-size: 28px;
+			color: $green;
+		}
+	}
+}

@@ -17,7 +17,7 @@ const aliases = (() =>
 	{
 		let p = aliasPaths[alias][0];
 		if (p)
-			a[alias.replace("/*", "")] = "./" + p.replace("/*", "");
+			a[alias.replace("/*", "")] = "./src/" + p.replace("/*", "");
 	}
 	return a;
 })();
@@ -37,7 +37,7 @@ const getHost = () =>
 const config = {
 	mode: "development",
 	entry: {
-		app: resolve("app/index.tsx"),
+		app: resolve("src/app/index.tsx"),
 	},
 	stats: "minimal",
 	target: "web",
