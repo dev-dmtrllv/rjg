@@ -12,11 +12,11 @@ $section-offset-mobile: 38px 0px 38px 0px;
 
 @mixin section-offset()
 {
+	padding: $section-offset;
 	@include media("mobile") {
-		margin: $section-offset-mobile;
+		padding: $section-offset-mobile;
 	}
 	@include media("tablet") {
-		margin: $section-offset-tablet;
+		padding: $section-offset-tablet;
 	}
-	margin: $section-offset;
 }
